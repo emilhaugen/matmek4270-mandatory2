@@ -343,7 +343,7 @@ class NeumannChebyshev(Composite, Chebyshev):
 
         # try something from:
         # https://shenfun.readthedocs.io/en/latest/_modules/shenfun/chebyshev/bases.html?highlight=chebyshev%20neumann
-        #  not sure if this is right, Chebyshev recurrence relations are not nice 
+        #  unsure if correct, Chebyshev recurrence relations are not nice 
         off_diag_coeffs = [-(j/(j+2))**2 for j in range(N+1)]
         self.S = sparse.diags([np.ones(N+1), off_diag_coeffs], (0, 2), shape=(N+1, N+3), format='csr')
 
